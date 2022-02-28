@@ -1,7 +1,6 @@
 package com.boardgames.uno.controller
 
 import com.boardgames.uno.domain.Secret
-import com.boardgames.uno.service.OauthService
 import com.boardgames.uno.service.SecretKeys
 import com.boardgames.uno.testUtils.assertNextWith
 import io.kotest.matchers.shouldBe

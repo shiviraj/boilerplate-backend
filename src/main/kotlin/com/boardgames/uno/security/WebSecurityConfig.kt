@@ -11,15 +11,15 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 class WebSecurityConfig(
-    @Autowired val webTokenFilter: WebTokenFilter
+    @Autowired val authorizationFilter: AuthorizationFilter
 ) : WebSecurityConfigurerAdapter() {
     @Override
     override fun configure(http: HttpSecurity) {
         http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and().authorizeRequests()
-            .antMatchers("/users/dummy", "/oauth/client-id", "/oauth/sign-in/code").permitAll()
+            .antMatchers("/games/start").permitAll()
             .anyRequest().authenticated()
-        http.addFilterBefore(webTokenFilter, UsernamePasswordAuthenticationFilter::class.java)
+        http.addFilterBefore(authorizationFilter, UsernamePasswordAuthenticationFilter::class.java)
     }
 }
 

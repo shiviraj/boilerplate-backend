@@ -7,12 +7,7 @@ spring:
       uri: ${MONGODB_URL:mongodb://localhost:27017}
 
 
-blog:
-  crypto:
-    secret-key: ${SECRET_KEY:secretkey }
-  oauth:
-    base-url: https://github.com
-    access-token-path: /login/oauth/access_token
-    user-base-url: https://api.github.com
-    user-profile-path: /user
-    user-email-path: /user/emails
+uno:
+  board-game:
+    base-url: https://shivi-board-games-backend.herokuapp.com
+    path: /users
